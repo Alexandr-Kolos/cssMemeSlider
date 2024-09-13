@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color:aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body_slider {
+    width: 60vw;
+    height: 70vh;
+    background-color:blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_slider {
+    width: 95%;
+    height: 90%;
+    background-color:blueviolet;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        'slider slider'
+        'description control';
+    row-gap: 1rem;
+}
