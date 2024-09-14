@@ -20,8 +20,8 @@ html, body {
 }
 
 .body_slider {
-    width: 60vw;
-    height: 70vh;
+    width: 35vw;
+    height: 95vh;
     background-color:blue;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ html, body {
 
 .content_slider {
     width: 95%;
-    height: 90%;
+    height: 95%;
     background-color:blueviolet;
     display: grid;
     grid-template-rows: 4fr 1fr;
@@ -46,7 +46,7 @@ html, body {
     position:relative;
     overflow:hidden;
     width: 100%;
-    height:100%;
+    aspect-ratio: 1 / 1;
 }
 
 .slides {
@@ -58,6 +58,7 @@ html, body {
 
 .slide {
     width: 100%;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -72,6 +73,17 @@ html, body {
 
 input[type="radio"] {
     display: none;
+}
+
+.description p {
+    display: none;
+}
+
+#slide1:checked ~ .description #desc1,
+#slide2:checked ~ .description #desc2,
+#slide3:checked ~ .description #desc3,
+#slide4:checked ~ .description #desc4 {
+    display: block;
 }
 
 #slide1:checked ~ .slides {
