@@ -137,15 +137,113 @@ input[type="radio"] {
 .control-btn {
     width: 1rem;
     height: 1rem;
-    background-color:#ffffff;
+    background-color:#00bfff;
+    border: 0.2rem solid #00bfff;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.control-btn:hover {
+    background-color:#ffffff;
+    border-color:#ffffff;
 }
 
 #slide1:checked ~ .control label[for="slide1"],
 #slide2:checked ~ .control label[for="slide2"],
 #slide3:checked ~ .control label[for="slide3"],
 #slide4:checked ~ .control label[for="slide4"] {
-    background-color: #ff0000;
+    background-color: rgb(45, 45, 45);
+    border-color: #00bfff;
+}
+
+#slide1:checked ~ .control label[for="slide1"]:hover,
+#slide2:checked ~ .control label[for="slide2"]:hover,
+#slide3:checked ~ .control label[for="slide3"]:hover,
+#slide4:checked ~ .control label[for="slide4"]:hover {
+    border-color:#ffffff;
+}
+
+@media (max-width: 767px) {
+    .body_slider {
+        width: 55vw;
+        height: 90vh;
+    }
+
+    .content_slider {
+        grid-template-rows: 4fr 1rem 1fr;
+        grid-template-columns: none;
+        grid-template-areas: 
+            'slider'
+            'control'
+            'description';
+    }
+
+    .control {
+        justify-content: center;
+        row-gap: 0.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .body_slider {
+        width: 60vw;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 620px) {
+    .body_slider {
+        width: 65vw;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 560px) {
+    .body_slider {
+        width: 75vw;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .body_slider {
+        width: 80vw;
+        height: 82vh;
+    }
+}
+
+@media (max-width: 440px) {
+    .body_slider {
+        width: 85vw;
+        height: 80vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .body_slider {
+        width: 90vw;
+        height: 78vh;
+    }
+}
+
+@media (max-width: 370px) {
+    .body_slider {
+        width: 93vw;
+        height: 75vh;
+    }
+}
+
+@media (max-width: 345px) {
+    .body_slider {
+        width: 95vw;
+        height: 73vh;
+    }
+}
+
+@media (max-width: 320px) {
+    .body_slider {
+        width: 97vw;
+        height: 70vh;
+    }
 }
