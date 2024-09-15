@@ -13,7 +13,7 @@ html, body {
 .container {
     width: 100vw;
     height: 100vh;
-    background-color:aqua;
+    background-color:#ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ html, body {
 .body_slider {
     width: 35vw;
     height: 95vh;
-    background-color:blue;
+    background-color:rgb(45, 45, 45);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,6 @@ html, body {
 .content_slider {
     width: 95%;
     height: 95%;
-    background-color:blueviolet;
     display: grid;
     grid-template-rows: 4fr 1fr;
     grid-template-columns: 4fr 1fr;
@@ -39,20 +38,19 @@ html, body {
         'slider slider'
         'description control';
     row-gap: 1rem;
+    overflow: hidden;
 }
 
-.slider {
-    grid-area: slider;
-    position:relative;
-    overflow:hidden;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-}
+
 
 .slides {
+    grid-area: slider;
+    position:relative;
+    
     display: flex;
     width: 400%;
-    width: 100%;
+    width:100%;
+    aspect-ratio: 1 / 1;
     transition: transform 0.5s ease;
 }
 
@@ -75,16 +73,44 @@ input[type="radio"] {
     display: none;
 }
 
-.description p {
-    display: none;
+.description {
+    grid-area: description;
+    position: relative;
+    overflow: hidden;
 }
 
-#slide1:checked ~ .description #desc1,
-#slide2:checked ~ .description #desc2,
-#slide3:checked ~ .description #desc3,
-#slide4:checked ~ .description #desc4 {
-    display: block;
+.descriptions {
+    display: flex;
+    width: 400%;
+    width:100%;
+    transition: transform 0.5s ease;
 }
+
+.descriptions p {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+#slide1:checked ~ .description .descriptions {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .description .descriptions {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .description .descriptions {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .description .descriptions {
+    transform: translateX(-300%);
+}
+
+
 
 #slide1:checked ~ .slides {
     transform: translateX(0);
